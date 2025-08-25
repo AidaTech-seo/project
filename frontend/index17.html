@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ساخت اکانت</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .form-group input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            padding-right: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group .icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        .form-group .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+        }
+        .form-group .fa-check-circle {
+            color: green;
+        }
+        .form-group .fa-exclamation-circle {
+            color: red;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ساخت اکانت</h2>
+        <div class="form-group">
+            <input type="text" id="username" placeholder="نام کاربری">
+            <i class="fas fa-check-circle icon"></i>
+            <i class="fas fa-exclamation-circle icon"></i>
+            <div class="error-message">مطابقت ندارد</div>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="آدرس ایمیل">
+            <i class="fas fa-check-circle icon"></i>
+            <i class="fas fa-exclamation-circle icon"></i>
+            <div class="error-message">مطابقت ندارد</div>
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="رمز عبور">
+            <i class="fas fa-check-circle icon"></i>
+            <i class="fas fa-exclamation-circle icon"></i>
+            <div class="error-message">مطابقت ندارد</div>
+        </div>
+        <div class="form-group">
+            <input type="password" id="confirm-password" placeholder="تکرار رمز عبور">
+            <i class="fas fa-check-circle icon"></i>
+            <i class="fas fa-exclamation-circle icon"></i>
+            <div class="error-message">مطابقت ندارد</div>
+        </div>
+        <button class="submit-btn" onclick="validateForm()">ارسال</button>
+    </div>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+
+            validateField(username, username.value.trim() !== '');
+            validateField(email, email.value.trim() !== '' && validateEmail(email.value));
+            validateField(password, password.value.trim() !== '');
+            validateField(confirmPassword, confirmPassword.value.trim() !== '' && confirmPassword.value === password.value);
+        }
+        function validateField(field, isValid) {
+            const iconCheck = field.nextElementSibling;
+            const iconExclamation = iconCheck.nextElementSibling;
+            const errorMessage = iconExclamation.nextElementSibling;
+
+            if (isValid) {
+                iconCheck.style.display = 'inline';
+                iconExclamation.style.display = 'none';
+                errorMessage.style.display = 'none';
+            } else {
+                iconCheck.style.display = 'none';
+                iconExclamation.style.display = 'inline';
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+</body>
+</html>

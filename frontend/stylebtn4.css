@@ -1,0 +1,207 @@
+body {
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+}
+
+ .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    
+}
+
+#navbarDropdown{
+    text-align: right;
+}
+.form-inline {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+
+}
+
+@media (min-width: 768px) {
+    
+  
+    .form-inline {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 50%; 
+    }
+    
+    .navbar-collapse {
+        justify-content: space-between;
+    }   
+} 
+
+.form-inline .btn  {
+    margin-top: 10px;
+}
+
+#mother-statbox{
+margin-bottom: 50px;
+margin-left: -5%;
+margin-right: 5%;
+}
+#statbox-container{
+    background-color: #000000;
+    border-radius: 35%;
+    width: 75%;
+    height: 90%;
+}
+.stat-box {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.stat-box img{
+    width: 170px;
+    border-radius: 10px;
+}
+.text-statbox{
+    color: white;
+    margin-top: 40px;
+    font-weight: 900;
+    font-size: larger;
+    word-spacing: 5px;
+}
+.stat-box .number {
+    font-size: 20px;
+    color: white;
+    font-weight: 900;   
+}
+
+.card-custom {
+    text-align: right;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-custom img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+    margin-bottom: 10px; 
+}
+
+#bt {
+    opacity: 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: opacity 0.5s; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.image-container:hover #bt {
+    opacity: 0.8;
+    border-radius: 50px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+}
+#pic-card:hover{
+    opacity: 20%;
+    transition: opacity 0.5s; 
+    cursor: pointer;
+}
+
+.card-custom h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(141, 106, 16);
+    
+}
+.card-custom p {
+    font-size: 16px;
+    color: #666;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    font-size: 14px;
+    color: #999;
+}
+.commenty{
+    margin-left: 40%;
+}
+#fa-user{
+    color: rgb(175, 128, 9);
+    font-weight: 900;
+}
+
+.footer {
+    background-image: url('https://img.freepik.com/free-vector/abstract-yellow-comic-zoom_1409-923.jpg?ga=GA1.1.1271848700.1720447999&semt=ais_hybrid'); /* لینک تصویر پس‌زمینه */
+    background-size: cover; 
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-subscribe {
+   
+    color: #000000; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-subscribe input[type="search"] {
+    width: 70%;  
+}
+      
+.footer-logo {
+    margin-bottom: 20px;
+}
+.footer-rights {
+    background-color: #000000; 
+    color: #ffffff; 
+    margin-top: 20px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    position:fixed;
+    
+}
+.footer-subscribe img {
+    margin-right: 95px; 
+    height: 130px; 
+    border-radius: 10px;
+}
+#form-list{
+  
+    margin-bottom: 60px;
+    border-radius: 10px;
+    margin-right: -25px;
+}
+
+
+.logo{
+    margin-left:150px;
+    margin-bottom:30px;
+    
+}

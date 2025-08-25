@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style19.css">
+</head>
+<body>
+    <!-- <div class="container">
+        <h2>BMIمحاسبه</h2>
+        <div class="slider-container">
+            <label for="weight">وزن (کیلوگرم): <span id="weightValue">139</span></label>
+            <input type="range" id="weight" class="slider" min="30" max="200" value="139">
+        </div>
+        <div class="slider-container">
+            <label for="height">قد (سانتیمتر): <span id="heightValue">191</span></label>
+            <input type="range" id="height" class="slider" min="100" max="250" value="191">
+        </div>
+        <button class="calculate-btn" onclick="calculateBMI()">محاسبه</button>
+        <div class="output">
+            <p>BMI شما: <span id="bmiOutput"></span></p>
+        </div>
+    </div> -->
+<!-- 
+    <div class="container">
+        <h2>محاسبه BMI</h2>
+        <div class="slider-container">
+            <label for="weight">وزن (کیلوگرم):</label>
+            <div id="weightDisplay" class="value-display">139</div>
+            <input type="range" id="weight" class="slider" min="30" max="200" value="139">
+        </div>
+        <div class="slider-container">
+            <label for="height">قد</label>
+            <span>سانتی متر </span>
+            <div id="heightDisplay" class="value-display">191</div>
+            <input type="range" id="height" class="slider" min="100" max="250" value="191">
+        </div>
+        <button class="calculate-btn" onclick="calculateBMI()">محاسبه</button>
+        <div class="output">
+            <p>BMI شما: <span id="bmiOutput"></span></p>
+            <p class="warning" id="warningMessage"></p>
+        </div>
+    </div> -->
+    <div class="container">
+        <h2>محاسبه BMI</h2>
+        <div class="slider-container" id="slideA">
+           
+            <input type="range" id="weight" class="slider" min="30" max="200" value="139">
+            <div class="value-display-container">
+                <label for="weight">وزن:</label>    <div id="weightDisplay" class="value-display">139</div>
+                <span>کیلوگرم</span>
+            </div>
+        </div>
+        <div class="slider-container" id="slideb">
+           
+            <input type="range" id="height" class="slider" min="100" max="250" value="191">
+            <div class="value-display-container">
+                <label for="height">قد:</label>   <div id="heightDisplay" class="value-display">191</div>
+                <span>سانتیمتر</span>
+            </div>
+        </div>
+        <button class="calculate-btn" onclick="calculateBMI()">محاسبه</button>
+        <div class="output">
+            <p>BMI شما: <span id="bmiOutput"></span></p>
+            <p class="warning" id="warningMessage"></p>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+
+    const weightSlider = document.getElementById('weight');
+        const heightSlider = document.getElementById('height');
+        const weightDisplay = document.getElementById('weightDisplay');
+        const heightDisplay = document.getElementById('heightDisplay');
+        const bmiOutput = document.getElementById('bmiOutput');
+        const warningMessage = document.getElementById('warningMessage');
+
+        weightSlider.oninput = function() {
+            weightDisplay.textContent = this.value;
+        }
+
+        heightSlider.oninput = function() {
+            heightDisplay.textContent = this.value;
+        }
+
+        function calculateBMI() {
+            const weight = weightSlider.value;
+            const height = heightSlider.value / 100; // تبدیل سانتیمتر به متر
+            const bmi = (weight / (height * height)).toFixed(2);
+            bmiOutput.textContent = bmi;
+
+            if (bmi < 18.5 || bmi > 24.9) {
+                warningMessage.textContent = "لطفاً ورزش را شروع کنید .";
+            } else {
+                warningMessage.textContent = "";
+            }
+        }
+    </script>
+
+</script>
+</html>
